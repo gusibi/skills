@@ -1,0 +1,11 @@
+# 忽略所有文件和目录
+*
+
+# 保留的目录
+!article-image/
+!article-image/**
+!commit/
+!commit/**
+
+# 保留 .gitignore 文件本身
+!.gitignore
