@@ -4,8 +4,14 @@
 # 保留的目录
 !article-image/
 !article-image/**
-!commit/
-!commit/**
+!development/
+!development/**
+!design/
+!design/**
+!llm-pricing/
+!llm-pricing/**
+llm-pricing/output
 
 # 保留 .gitignore 文件本身
 !.gitignore
+.DS_Store
