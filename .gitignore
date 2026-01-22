@@ -8,9 +8,12 @@
 !development/**
 !design/
 !design/**
-!llm-pricing/
-!llm-pricing/**
-llm-pricing/output
+!llm-price-scraper/
+!llm-price-scraper/**
+llm-price-scraper/prices
+llm-price-scraper/prices.csv
+llm-price-scraper/prices.json
+
 
 # 保留 .gitignore 文件本身
 !.gitignore
