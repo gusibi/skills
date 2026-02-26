@@ -13,6 +13,8 @@
 llm-price-scraper/prices
 llm-price-scraper/prices.csv
 llm-price-scraper/prices.json
+!akshare-data/
+!akshare-data/**
 
 
 # 保留 .gitignore 文件本身
