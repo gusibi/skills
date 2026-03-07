@@ -135,10 +135,26 @@ python scripts/generate_image.py --prompt "提示内容" --output path/to/imgs/c
 
 # 或直接传入 API Key
 python scripts/generate_image.py --prompt "提示内容" --output path/to/imgs/cover.png --api-key "ms-xxx"
+
+# 指定图片尺寸（默认 1024×576，16:9比例）
+python scripts/generate_image.py --prompt "提示内容" --output cover.png --width 1920 --height 1080
 ```
+
+**尺寸参数说明**：
+
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `--width` | 图片宽度（像素） | 1024 |
+| `--height` | 图片高度（像素） | 576 |
+
+常用尺寸参考：
+- **16:9 宽屏**：`--width 1024 --height 576`（默认）
+- **1:1 方形**：`--width 1024 --height 1024`
+- **手机竖屏**：`--width 576 --height 1024`
 
 脚本功能：
 - 调用 ModelScope API 生成图片
+- 支持自定义图片尺寸（默认 1024×576，16:9 比例）
 - 支持异步任务模式，自动轮询等待结果
 - 自动创建输出目录
 - 保存图片到指定路径

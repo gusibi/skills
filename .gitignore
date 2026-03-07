@@ -1,6 +1,8 @@
 # 忽略所有文件和目录
 *
 
+!README.md
+
 # 保留的目录
 !article-image/
 !article-image/**

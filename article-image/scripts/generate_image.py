@@ -21,16 +21,18 @@ from PIL import Image
 from io import BytesIO
 
 
-def generate_image(prompt: str, output_path: str, api_key: str, model: str = "Tongyi-MAI/Z-Image-Turbo") -> str:
+def generate_image(prompt: str, output_path: str, api_key: str, model: str = "Tongyi-MAI/Z-Image-Turbo", width: int = 1024, height: int = 576) -> str:
     """
     生成图片并保存到指定路径
-    
+
     Args:
         prompt: 图片生成提示词
         output_path: 输出图片路径
         api_key: ModelScope API Key
         model: 使用的模型 ID
-        
+        width: 图片宽度（默认: 1024）
+        height: 图片高度（默认: 576，16:9比例）
+
     Returns:
         生成的图片路径
     """
@@ -50,7 +52,9 @@ def generate_image(prompt: str, output_path: str, api_key: str, model: str = "To
         headers={**headers, "X-ModelScope-Async-Mode": "true"},
         data=json.dumps({
             "model": model,
-            "prompt": prompt
+            "prompt": prompt,
+            "width": width,
+            "height": height
         }, ensure_ascii=False).encode("utf-8"),
         timeout=30
     )
@@ -139,6 +143,20 @@ def main():
         default="Tongyi-MAI/Z-Image-Turbo",
         help="模型 ID（默认: Tongyi-MAI/Z-Image-Turbo）"
     )
+
+    parser.add_argument(
+        "--width",
+        type=int,
+        default=1024,
+        help="图片宽度（默认: 1024）"
+    )
+
+    parser.add_argument(
+        "--height",
+        type=int,
+        default=576,
+        help="图片高度（默认: 576，16:9比例）"
+    )
     
     args = parser.parse_args()
     
@@ -146,7 +164,7 @@ def main():
         print("错误: 请通过 --api-key 参数或 MODELSCOPE_API_KEY 环境变量提供 API Key", file=sys.stderr)
         sys.exit(1)
     
-    generate_image(args.prompt, args.output, args.api_key, args.model)
+    generate_image(args.prompt, args.output, args.api_key, args.model, args.width, args.height)
 
 
 if __name__ == "__main__":
