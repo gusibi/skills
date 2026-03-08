@@ -1,0 +1,26 @@
+{
+  "skill_name": "x-com-operator",
+  "evals": [
+    {
+      "id": 0,
+      "name": "browse_timeline",
+      "prompt": "打开推特主页，浏览我的 timeline，并告诉我前 3 条推文的内容。",
+      "expected_output": "应该显示三条来自主页时间线的推文摘要。",
+      "files": []
+    },
+    {
+      "id": 1,
+      "name": "post_tweet",
+      "prompt": "帮我发一条推文，内容是：'正在测试我的 AI 助手，它现在可以直接操控浏览器帮我发推了！#AI #Automation'",
+      "expected_output": "推文应该成功发布，并且能看到发布成功的确认信息。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "check_likes",
+      "prompt": "去我的 X 主页看看我最近点赞的推文，总结一下我最近关注的方向。",
+      "expected_output": "导航到点赞页面，提取点赞推文内容并给出总结。",
+      "files": []
+    }
+  ]
+}

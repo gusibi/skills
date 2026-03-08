@@ -1,0 +1,23 @@
+{
+    "skill_name": "xiaohongshu-operator",
+    "evals": [
+        {
+            "id": 1,
+            "prompt": "在小红书上搜索’macbook 推荐‘，停留在搜索结果页面，告诉我前3个帖子的标题和作者名",
+            "expected_output": "Should return the titles and authors of the top 3 search results for the given term",
+            "files": []
+        },
+        {
+            "id": 2,
+            "prompt": "打开这个小红书帖子 https://www.xiaohongshu.com/explore/xxxxxx ，告诉我它的内容，并帮我点一个赞",
+            "expected_output": "Should return the text content of the post, and successfully click the like button",
+            "files": []
+        },
+        {
+            "id": 3,
+            "prompt": "去小红书的创作者中心发一篇帖子，标题叫“AI自动控制小红书测试”，内容是“使用BrowserWing API测试自动化发送，这是一条测试推文。”，如果有上传图片的选项，随意填写即可，最后点击发布。",
+            "expected_output": "Should correctly navigate to the publish page, enter title and content into the editor, and click the publish button",
+            "files": []
+        }
+    ]
+}
