@@ -17,6 +17,11 @@ llm-price-scraper/prices.csv
 llm-price-scraper/prices.json
 !akshare-data/
 !akshare-data/**
+!agent-reach/
+!agent-reach/**
+!markitdown/
+!markitdown/**
+
 
 
 # 保留 .gitignore 文件本身

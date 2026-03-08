@@ -25,6 +25,14 @@ This repository contains a collection of specialized "Skills" designed for Large
 * **[Article Image Generator (`article-image/`)](./article-image/)**
   * Generates beautiful cover images and inline illustrations for articles. Automatically analyzes article structure and inserts hand-drawn style illustrations at suitable paragraphs.
 
+### Web & Information Retrieval
+* **[Agent Reach (`agent-reach/`)](./agent-reach/)**
+  * Use the internet: search, read, and interact with 13+ platforms including Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu (小红书), Douyin (抖音), WeChat Articles, LinkedIn, Boss直聘, RSS, Exa web search, and any web page.
+
+### Document Processing
+* **[MarkItDown (`markitdown/`)](./markitdown/)**
+  * Convert various document formats (PDF, PowerPoint, Word, Excel, Images, Audio, HTML, CSV, JSON, XML, ZIP) into text Markdown format, making them accessible to LLMs.
+
 ### Development Utilities
 * **[Git Commit Generator (`development/commit/`)](./development/commit/)**
   * Automatically analyzes current git changes and generates concise, structured commit messages in both English and Chinese.
