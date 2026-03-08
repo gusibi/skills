@@ -1,9 +1,28 @@
-# 忽略所有文件和目录
+# Whitelist approach: ignore everything by default
 *
 
+# Keep root configuration and documentation
+!.gitignore
 !README.md
+.agents/**
 
-# 保留的目录
+# Keep Xiaohongshu Operator files
+!xiaohongshu-operator/
+!xiaohongshu-operator/**
+# Ignore temporary and dependency files in Xiaohongshu Operator
+xiaohongshu-operator/temp/
+xiaohongshu-operator/node_modules/
+
+# Keep X.com Operator (x-operator) files
+!x-operator/
+!x-operator/**
+# Ignore temporary and noise files in X.com Operator
+x-operator/temp/
+x-operator/node_modules/
+x-operator/-p/
+x-operator/mkdir/
+
+# Keep other active projects
 !article-image/
 !article-image/**
 !development/
@@ -21,10 +40,9 @@ llm-price-scraper/prices.json
 !agent-reach/**
 !markitdown/
 !markitdown/**
+markitdown/venv
 
-
-
-
-# 保留 .gitignore 文件本身
-!.gitignore
+# Global ignore patterns
 .DS_Store
+Thumbs.db
+*.log
