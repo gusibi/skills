@@ -41,6 +41,13 @@ llm-price-scraper/prices.json
 !markitdown/
 !markitdown/**
 markitdown/venv
+!markdown-proxy/
+!markdown-proxy/**
+markdown-proxy/output
+
+!web-search/
+!web-search/**
+web-search/output
 
 # Global ignore patterns
 .DS_Store
