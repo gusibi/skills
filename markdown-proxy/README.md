@@ -1,4 +1,4 @@
-## 作者
+## 原作者
 
 - **X (Twitter)**: [@vista8](https://x.com/vista8)
 - **微信公众号「向阳乔木推荐看」**
@@ -56,7 +56,7 @@ Automatically syncs fetched content to your Obsidian vault using the [obsidian-c
 ### Installation
 
 ```bash
-npx skills add joeseesun/markdown-proxy
+npx skills add gusibi/skills/markdown-proxy
 ```
 
 Verify:
@@ -151,7 +151,7 @@ Built-in `fetch_feishu.py` script fetches documents via Feishu Open API and auto
 ### 安装
 
 ```bash
-npx skills add joeseesun/markdown-proxy
+npx skills add gusibi/skills/markdown-proxy
 ```
 
 验证：

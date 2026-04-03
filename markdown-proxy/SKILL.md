@@ -56,7 +56,7 @@ else:
 ### Step A: 公众号文章抓取（内置）
 
 ```bash
-python3 ~/.claude/skills/markdown-proxy/scripts/fetch_weixin.py "WEIXIN_URL"
+python3 scripts/fetch_weixin.py "WEIXIN_URL"
 ```
 
 依赖：`playwright`、`beautifulsoup4`、`lxml`
@@ -66,7 +66,7 @@ python3 ~/.claude/skills/markdown-proxy/scripts/fetch_weixin.py "WEIXIN_URL"
 ### Step B: 飞书文档抓取（内置）
 
 ```bash
-python3 ~/.claude/skills/markdown-proxy/scripts/fetch_feishu.py "FEISHU_URL"
+python3 scripts/fetch_feishu.py "FEISHU_URL"
 ```
 
 依赖：`requests`（标准库级别），环境变量 `FEISHU_APP_ID` + `FEISHU_APP_SECRET`
@@ -114,17 +114,18 @@ defuddle parse "{original_url}" -m -j
 {完整 Markdown 内容，超长时截取前 200 行并注明"内容已截取，完整版已保存到 xxx"}
 ```
 
-### Step 5: 保存文件（本地 + Obsidian）
+### Step 5: 保存文件（本地 + Obsidian 默认双重保存）
 
-将抓取的 Markdown 内容保存到本地，并同步到 Obsidian 库中：
+将抓取的 Markdown 内容保存到本地，并**默认同步到 Obsidian 库中**。
+**极其重要**：即使只有“抓取”、“保存为 Markdown”等表述（未提 Obsidian），也**必须同时执行**保存到本地和 Obsidian 两个操作。
 
-#### 1. 保存到本地（默认执行）
+#### 1. 保存到本地（必须执行）
 - **默认路径**：`~/Downloads/{title}.md`
 - **文件名**：用文章标题，去掉特殊字符。
 - 如果用户指定了其他保存路径，按用户要求。
 
-#### 2. 同步到 Obsidian（必须必须）
-使用 `obsidian-cli` skill 将笔记保存到 Obsidian 库中。
+#### 2. 同步到 Obsidian（默认执行，不可省略）
+使用 `obsidian-cli` skill 将笔记保存到 Obsidian 库中。这是默认必须要做的！
 
 **执行命令示例**：
 ```bash
@@ -142,11 +143,12 @@ obsidian create name="{title}" content="{完整 Markdown 内容}" silent
 - Obsidian 保存状态（已创建新笔记或更新成功）。
 - 如果保存失败，说明原因。
 
-- 如果用户明确说"不用保存"或只是快速预览，可以跳过。
+**跳过规则**：
+- **只有**在用户明确且具体地表示“不要保存到 Obsidian”或“只预览不保存”时，才可跳过对应的保存步骤！
 
 ### Step 6: 联合使用示例 (Combo Flow)
 
-当用户要求"抓取并保存到 Obsidian"时，按照以下流程一气呵成：
+当用户发起抓取请求时（无论是否显式提及 Obsidian），按照以下流程一气呵成：
 
 1. **抓取**：使用脚本或代理获取内容。
 2. **本地保存**：`~/Downloads/{title}.md`
@@ -173,17 +175,17 @@ curl -sL "https://r.jina.ai/https://example.com/article"
 
 ### 公众号文章
 ```bash
-python3 ~/.claude/skills/markdown-proxy/scripts/fetch_weixin.py "https://mp.weixin.qq.com/s/abc123"
+python3 scripts/fetch_weixin.py "https://mp.weixin.qq.com/s/abc123"
 ```
 
 ### 飞书文档
 ```bash
-python3 ~/.claude/skills/markdown-proxy/scripts/fetch_feishu.py "https://xxx.feishu.cn/docx/xxxxxxxx"
+python3 scripts/fetch_feishu.py "https://xxx.feishu.cn/docx/xxxxxxxx"
 ```
 
 ### 飞书知识库
 ```bash
-python3 ~/.claude/skills/markdown-proxy/scripts/fetch_feishu.py "https://xxx.feishu.cn/wiki/xxxxxxxx"
+python3 scripts/fetch_feishu.py "https://xxx.feishu.cn/wiki/xxxxxxxx"
 ```
 
 ## Notes
